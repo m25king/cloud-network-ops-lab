@@ -1,0 +1,122 @@
+[
+  {
+    "utc": "2026-09-08T15:17:10.706075+00:00",
+    "command": "screen-length 0 temporary",
+    "output": "screen-length 0 temporary\nError: The type of the included user interface must be VTY.\n<Huawei>\n"
+  },
+  {
+    "utc": "2026-09-08T15:18:27.738937+00:00",
+    "command": "display version",
+    "output": "display version\nHuawei Versatile Routing Platform Software\nVRP (R) software, Version 5.110 (S3700 V200R001C00)\nCopyright (c) 2000-2011 HUAWEI TECH CO., LTD\n\nQuidway S3700-26C-HI Routing Switch uptime is 0 week, 0 day, 0 hour, 3 minutes\n<Huawei>\n"
+  },
+  {
+    "utc": "2026-09-08T15:18:27.946946+00:00",
+    "command": "display interface brief",
+    "output": "display interface brief\nPHY: Physical\n*down: administratively down\n(l): loopback\n(s): spoofing\n(b): BFD down\n(e): ETHOAM down\n(dl): DLDP down\n(d): Dampening Suppressed\nInUti/OutUti: input utility/output utility\nInterface                   PHY   Protocol InUti OutUti   inErrors  outErrors\nEthernet0/0/1               up    up          0%     0%          0          0\nEthernet0/0/2               down  down        0%     0%          0          0\nEthernet0/0/3               down  down        0%     0%          0          0\nEthernet0/0/4               down  down        0%     0%          0          0\nEthernet0/0/5               down  down        0%     0%          0          0\nEthernet0/0/6               down  down        0%     0%          0          0\nEthernet0/0/7               down  down        0%     0%          0          0\nEthernet0/0/8               down  down        0%     0%          0          0\nEthernet0/0/9               down  down        0%     0%          0          0\nEthernet0/0/10              down  down        0%     0%          0          0\nEthernet0/0/11              down  down        0%     0%          0          0\nEthernet0/0/12              down  down        0%     0%          0          0\nEthernet0/0/13              down  down        0%     0%          0          0\nEthernet0/0/14              down  down        0%     0%          0          0\nEthernet0/0/15              down  down        0%     0%          0          0\nEthernet0/0/16              down  down        0%     0%          0          0\nEthernet0/0/17              down  down        0%     0%          0          0\nEthernet0/0/18              down  down        0%     0%          0          0\nEthernet0/0/19              down  down        0%     0%          0          0\nEthernet0/0/20              down  down        0%     0%          0          0\nEthernet0/0/21              down  down        0%     0%          0          0\nEthernet0/0/22              down  down        0%     0%          0          0\nGigabitEthernet0/0/1        up    up          0%     0%          0          0\nGigabitEthernet0/0/2        down  down        0%     0%          0          0\n  ---- More ----\u001b[42D                                          \u001b[42DMEth0/0/1                   down  down        0%     0%          0          0\nNULL0                       up    up(s)       0%     0%          0          0\nVlanif1                     up    down        --     --          0          0\n<Huawei>\n"
+  },
+  {
+    "utc": "2026-09-08T15:18:28.353876+00:00",
+    "command": "display current-configuration",
+    "output": "display current-configuration\n#\nsysname Huawei\n#\ncluster enable\nntdp enable\nndp enable\n#\ndrop illegal-mac alarm\n#\ndiffserv domain default\n#\ndrop-profile default\n#\naaa\n authentication-scheme default\n authorization-scheme default\n accounting-scheme default\n domain default\n domain default_admin\n# REDACTED sensitive configuration\n# REDACTED sensitive configuration\n#\ninterface Vlanif1\n#\n  ---- More ----\u001b[42D                                          \u001b[42Dinterface MEth0/0/1\n#\ninterface Ethernet0/0/1\n#\ninterface Ethernet0/0/2\n#\ninterface Ethernet0/0/3\n#\ninterface Ethernet0/0/4\n#\ninterface Ethernet0/0/5\n#\ninterface Ethernet0/0/6\n#\ninterface Ethernet0/0/7\n#\ninterface Ethernet0/0/8\n#\ninterface Ethernet0/0/9\n#\ninterface Ethernet0/0/10\n#\ninterface Ethernet0/0/11\n#\n  ---- More ----\u001b[42D                                          \u001b[42Dinterface Ethernet0/0/12\n#\ninterface Ethernet0/0/13\n#\ninterface Ethernet0/0/14\n#\ninterface Ethernet0/0/15\n#\ninterface Ethernet0/0/16\n#\ninterface Ethernet0/0/17\n#\ninterface Ethernet0/0/18\n#\ninterface Ethernet0/0/19\n#\ninterface Ethernet0/0/20\n#\ninterface Ethernet0/0/21\n#\ninterface Ethernet0/0/22\n#\ninterface GigabitEthernet0/0/1\n#\n  ---- More ----\u001b[42D                                          \u001b[42Dinterface GigabitEthernet0/0/2\n#\ninterface NULL0\n#\nuser-interface con 0\nuser-interface vty 0 4\n#\nreturn\n<Huawei>\n"
+  },
+  {
+    "utc": "2026-09-08T15:19:00.286713+00:00",
+    "command": "system-view",
+    "output": "system-view\nEnter system view, return user view with Ctrl+Z.\n[Huawei]\n"
+  },
+  {
+    "utc": "2026-09-08T15:19:00.388924+00:00",
+    "command": "sysname ACC1",
+    "output": "sysname ACC1\n[ACC1]\n"
+  },
+  {
+    "utc": "2026-09-08T15:19:00.491426+00:00",
+    "command": "vlan 10",
+    "output": "vlan 10\n[ACC1-vlan10]\n"
+  },
+  {
+    "utc": "2026-09-08T15:19:00.593961+00:00",
+    "command": "quit",
+    "output": "quit\n[ACC1]\n"
+  },
+  {
+    "utc": "2026-09-08T15:19:00.695884+00:00",
+    "command": "interface GigabitEthernet0/0/1",
+    "output": "interface GigabitEthernet0/0/1\n[ACC1-GigabitEthernet0/0/1]\n"
+  },
+  {
+    "utc": "2026-09-08T15:19:00.797255+00:00",
+    "command": "port link-type trunk",
+    "output": "port link-type trunk\n[ACC1-GigabitEthernet0/0/1]\n"
+  },
+  {
+    "utc": "2026-09-08T15:19:00.899938+00:00",
+    "command": "port trunk allow-pass vlan 10",
+    "output": "port trunk allow-pass vlan 10\n[ACC1-GigabitEthernet0/0/1]\n"
+  },
+  {
+    "utc": "2026-09-08T15:19:01.002726+00:00",
+    "command": "quit",
+    "output": "quit\n[ACC1]\n"
+  },
+  {
+    "utc": "2026-09-08T15:19:01.104712+00:00",
+    "command": "interface Ethernet0/0/1",
+    "output": "interface Ethernet0/0/1\n[ACC1-Ethernet0/0/1]\n"
+  },
+  {
+    "utc": "2026-09-08T15:19:01.205662+00:00",
+    "command": "port link-type access",
+    "output": "port link-type access\n[ACC1-Ethernet0/0/1]\n"
+  },
+  {
+    "utc": "2026-09-08T15:19:01.308476+00:00",
+    "command": "port default vlan 10",
+    "output": "port default vlan 10\n[ACC1-Ethernet0/0/1]\n"
+  },
+  {
+    "utc": "2026-09-08T15:19:01.410522+00:00",
+    "command": "quit",
+    "output": "quit\n[ACC1]\n"
+  },
+  {
+    "utc": "2026-09-08T15:20:58.171163+00:00",
+    "command": "return",
+    "output": "return\n<ACC1>\n"
+  },
+  {
+    "utc": "2026-09-08T15:20:58.273663+00:00",
+    "command": "system-view",
+    "output": "system-view\nEnter system view, return user view with Ctrl+Z.\n[ACC1]\n"
+  },
+  {
+    "utc": "2026-09-08T15:20:58.376621+00:00",
+    "command": "interface Vlanif10",
+    "output": "interface Vlanif10\n[ACC1-Vlanif10]\n"
+  },
+  {
+    "utc": "2026-09-08T15:20:58.477968+00:00",
+    "command": "ip address 192.168.10.253 255.255.255.0",
+    "output": "ip address 192.168.10.253 255.255.255.0\n[ACC1-Vlanif10]\nSep  8 2026 23:20:58-08:00 ACC1 %%01IFNET/4/LINK_STATE(l)[4]:The line protocol IP on the interface Vlanif10 has entered the UP state.\n"
+  },
+  {
+    "utc": "2026-09-08T15:20:58.580789+00:00",
+    "command": "quit",
+    "output": "quit\n[ACC1]\n"
+  },
+  {
+    "utc": "2026-09-08T15:20:58.683754+00:00",
+    "command": "return",
+    "output": "return\n<ACC1>\n"
+  },
+  {
+    "utc": "2026-09-08T15:20:58.786326+00:00",
+    "command": "display ip interface brief",
+    "output": "display ip interface brief\n*down: administratively down\n^down: standby\n(l): loopback\n(s): spoofing\nThe number of interface that is UP in Physical is 3\nThe number of interface that is DOWN in Physical is 1\nThe number of interface that is UP in Protocol is 2\nThe number of interface that is DOWN in Protocol is 2\n\nInterface                         IP Address/Mask      Physical   Protocol  \nMEth0/0/1                         unassigned           down       down      \nNULL0                             unassigned           up         up(s)     \nVlanif1                           unassigned           up         down      \nVlanif10                          192.168.10.253/24    up         up        \n<ACC1>\n"
+  },
+  {
+    "utc": "2026-09-08T15:20:59.996033+00:00",
+    "command": "ping -c 3 192.168.10.252",
+    "output": "ping -c 3 192.168.10.252\n  PING 192.168.10.252: 56  data bytes, press CTRL_C to break\n    Reply from 192.168.10.252: bytes=56 Sequence=1 ttl=255 time=90 ms\nSep  8 2026 23:20:59-08:00 ACC1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25.191.3.1 configurations have been changed. The current change number is 10, the change loop count is 0, and the maximum number of records is 4095.\n    Reply from 192.168.10.252: bytes=56 Sequence=2 ttl=255 time=60 ms\n    Reply from 192.168.10.252: bytes=56 Sequence=3 ttl=255 time=30 ms\n\n  --- 192.168.10.252 ping statistics ---\n    3 packet(s) transmitted\n    3 packet(s) received\n    0.00% packet loss\n    round-trip min/avg/max = 30/60/90 ms\n\n<ACC1>\n"
+  }
+]

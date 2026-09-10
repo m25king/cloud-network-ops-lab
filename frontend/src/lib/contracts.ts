@@ -1,0 +1,13 @@
+import { z } from 'zod';
+export const assetSchema = z.object({ id: z.number().int().positive(), name: z.string(), zone: z.enum(['management', 'server', 'branch']) });
+export const assetsSchema = z.object({ items: z.array(assetSchema), total: z.number().int().nonnegative(), page: z.number().int().positive(), page_size: z.number().int().positive(), data_kind: z.literal('synthetic') });
+export const statusSchema = z.object({ database: z.literal('available'), driver: z.enum(['sqlite', 'mysql']), asset_count: z.number().int().nonnegative(), data_kind: z.literal('synthetic') });
+export const processSchema = z.object({ process: z.literal('alive') });
+export const drillSchema = z.object({ state: z.string(), scope: z.string().optional(), fault_method: z.string().optional(), stages: z.array(z.object({ label: z.string(), utc: z.iso.datetime({ offset: true }), healthz: z.number(), readyz: z.number(), db_up: z.number() })).max(100) });
+export const sampleSchema = z.object({ ok: z.boolean(), reason: z.string(), http_status: z.number().nullable(), latency_ms: z.number().nonnegative() });
+export const probeSchema = z.object({ name: z.string().max(200), kind: z.enum(['http', 'tcp']), target: z.string().max(2048), attempts: z.number().int().positive().max(100), successes: z.number().int().nonnegative(), request_failure_ratio: z.number().min(0).max(1), state: z.enum(['OK', 'FAILED']), samples: z.array(sampleSchema).max(100) }).refine(v => v.samples.length === v.attempts && v.successes === v.samples.filter(s => s.ok).length && Math.abs(v.request_failure_ratio - (1 - v.successes / v.attempts)) < 0.0001 && (v.state === 'OK') === (v.successes === v.attempts), '采样数量不一致');
+export const reportSchema = z.object({ generated_at_utc: z.iso.datetime({ offset: true }), note: z.string().optional(), results: z.array(probeSchema).max(200) });
+export type Asset = z.infer<typeof assetSchema>;
+export type Probe = z.infer<typeof probeSchema>;
+export type Report = z.infer<typeof reportSchema>;
+export const zoneLabels: Record<Asset['zone'], string> = { management: '管理区', server: '服务区', branch: '分支区' };

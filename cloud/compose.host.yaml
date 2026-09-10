@@ -1,0 +1,12 @@
+# Linux VM extension. Do not interpret Docker Desktop VM metrics as Windows host metrics.
+services:
+  node:
+    image: prom/node-exporter:v1.9.1
+    command: ['--path.rootfs=/host']
+    pid: host
+    volumes: ['/:/host:ro,rslave']
+    restart: unless-stopped
+    networks: [backend]
+  prometheus:
+    volumes:
+      - ./monitoring/prometheus.host.yml:/etc/prometheus/prometheus.yml:ro

@@ -1,0 +1,7 @@
+SYNTHETIC FIXTURE - not captured from a real device.
+Interface                         IP Address/Mask      Physical   Protocol
+Vlanif10                          192.168.10.252/24    up         up
+Vlanif99                          192.168.99.252/24    up         up
+Vlanif101                         10.0.0.2/30          up         up
+Vlanif102                         10.0.0.10/30         *down      down
+GigabitEthernet0/0/22              unassigned           down       down

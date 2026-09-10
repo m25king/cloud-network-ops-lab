@@ -1,0 +1,68 @@
+{
+  "generated_at_utc": "2026-09-08T15:08:21.544617+00:00",
+  "mode": "live_explicit_inventory",
+  "method": "HTTP status / TCP handshake",
+  "note": "Request failure ratio is not ICMP packet loss. No automatic repair.",
+  "results": [
+    {
+      "name": "local-readiness",
+      "kind": "http",
+      "target": "http://127.0.0.1:8081/readyz",
+      "expected_status": 200,
+      "attempts": 3,
+      "successes": 0,
+      "request_failure_ratio": 1.0,
+      "state": "FAILED",
+      "samples": [
+        {
+          "ok": false,
+          "reason": "unexpected_http_status",
+          "http_status": 503,
+          "latency_ms": 46.923
+        },
+        {
+          "ok": false,
+          "reason": "unexpected_http_status",
+          "http_status": 503,
+          "latency_ms": 41.98
+        },
+        {
+          "ok": false,
+          "reason": "unexpected_http_status",
+          "http_status": 503,
+          "latency_ms": 30.185
+        }
+      ]
+    },
+    {
+      "name": "local-listener",
+      "kind": "tcp",
+      "target": "127.0.0.1:8081",
+      "expected_status": 200,
+      "attempts": 3,
+      "successes": 3,
+      "request_failure_ratio": 0.0,
+      "state": "OK",
+      "samples": [
+        {
+          "ok": true,
+          "reason": "ok",
+          "http_status": null,
+          "latency_ms": 39.679
+        },
+        {
+          "ok": true,
+          "reason": "ok",
+          "http_status": null,
+          "latency_ms": 1.976
+        },
+        {
+          "ok": true,
+          "reason": "ok",
+          "http_status": null,
+          "latency_ms": 31.042
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+﻿name,kind,target,state,successes,attempts,request_failure_ratio
+local-healthy,http,http://127.0.0.1:61314/healthy,OK,3,3,0.0
+local-dependency-down,http,http://127.0.0.1:61314/dependency-down,FAILED,0,3,1.0
+local-tcp-listener,tcp,127.0.0.1:61314,OK,3,3,0.0

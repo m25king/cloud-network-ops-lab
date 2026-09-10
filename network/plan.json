@@ -1,0 +1,84 @@
+{
+  "status": "generated_not_device_validated",
+  "vlans": [
+    10,
+    20,
+    30,
+    40,
+    99
+  ],
+  "links": [
+    {
+      "a": "CORE1",
+      "a_port": "GigabitEthernet0/0/23",
+      "a_ip": "10.0.0.2/30",
+      "b": "HQ-AR1",
+      "b_port": "GigabitEthernet0/0/0",
+      "b_ip": "10.0.0.1/30",
+      "transit_vlan": 101
+    },
+    {
+      "a": "CORE2",
+      "a_port": "GigabitEthernet0/0/23",
+      "a_ip": "10.0.0.6/30",
+      "b": "HQ-AR1",
+      "b_port": "GigabitEthernet0/0/1",
+      "b_ip": "10.0.0.5/30",
+      "transit_vlan": 101
+    },
+    {
+      "a": "CORE1",
+      "a_port": "GigabitEthernet0/0/24",
+      "a_ip": "10.0.0.10/30",
+      "b": "HQ-AR2",
+      "b_port": "GigabitEthernet0/0/0",
+      "b_ip": "10.0.0.9/30",
+      "transit_vlan": 102
+    },
+    {
+      "a": "CORE2",
+      "a_port": "GigabitEthernet0/0/24",
+      "a_ip": "10.0.0.14/30",
+      "b": "HQ-AR2",
+      "b_port": "GigabitEthernet0/0/1",
+      "b_ip": "10.0.0.13/30",
+      "transit_vlan": 102
+    },
+    {
+      "a": "HQ-AR1",
+      "a_port": "GigabitEthernet0/0/2.301",
+      "a_ip": "10.0.0.17/30",
+      "b": "BR1",
+      "b_port": "GigabitEthernet0/0/0",
+      "b_ip": "10.0.0.18/30",
+      "transit_vlan": 301
+    },
+    {
+      "a": "HQ-AR2",
+      "a_port": "GigabitEthernet0/0/2.302",
+      "a_ip": "10.0.0.21/30",
+      "b": "BR2",
+      "b_port": "GigabitEthernet0/0/0",
+      "b_ip": "10.0.0.22/30",
+      "transit_vlan": 302
+    },
+    {
+      "a": "HQ-AR1",
+      "a_port": "GigabitEthernet0/0/2.201",
+      "a_ip": "198.51.100.1/30",
+      "b": "ISP",
+      "b_port": "GigabitEthernet0/0/0",
+      "b_ip": "198.51.100.2/30",
+      "transit_vlan": 201
+    },
+    {
+      "a": "HQ-AR2",
+      "a_port": "GigabitEthernet0/0/2.202",
+      "a_ip": "198.51.100.5/30",
+      "b": "ISP",
+      "b_port": "GigabitEthernet0/0/1",
+      "b_ip": "198.51.100.6/30",
+      "transit_vlan": 202
+    }
+  ]
+}

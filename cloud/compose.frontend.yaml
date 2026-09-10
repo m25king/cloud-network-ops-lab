@@ -1,0 +1,7 @@
+services:
+  console:
+    build: ../frontend
+    ports: ['127.0.0.1:4174:8080']
+    depends_on: [nginx]
+    networks: [backend]
+    restart: unless-stopped

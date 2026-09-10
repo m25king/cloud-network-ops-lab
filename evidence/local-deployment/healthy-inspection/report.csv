@@ -1,0 +1,3 @@
+﻿name,kind,target,state,successes,attempts,request_failure_ratio
+local-readiness,http,http://127.0.0.1:8081/readyz,OK,3,3,0.0
+local-listener,tcp,127.0.0.1:8081,OK,3,3,0.0

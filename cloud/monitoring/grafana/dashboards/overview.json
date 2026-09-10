@@ -1,0 +1,97 @@
+{
+  "title": "Cloud Network Lab",
+  "uid": "cloud-network-lab",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "5s",
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Application scrape availability",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "lab-prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "up{job=\"app\"}"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Database query availability",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "lab-prometheus"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "lab_db_up"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Business probe",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "lab-prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 9,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "probe_success{job=\"blackbox\"}"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Application request rate",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "lab-prometheus"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 9,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (status) (rate(lab_http_requests_total[2m]))"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "generated_at_utc": "2026-09-10T04:46:01.444859+00:00",
+  "environment": {
+    "os": "Windows",
+    "python": "3.11.0"
+  },
+  "tests_run": 25,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "verified": [
+    "Python/SQLite behavior",
+    "Local loopback HTTP and TCP probes",
+    "Report escaping",
+    "Supported synthetic VRP parser fixtures",
+    "Network address/config static invariants"
+  ],
+  "not_verified": [
+    "eNSP/VRP device command acceptance",
+    "Network failover timing",
+    "Docker Compose runtime",
+    "MySQL backup/restore execution",
+    "Prometheus rules execution",
+    "Grafana runtime",
+    "Real device SSH"
+  ]
+}

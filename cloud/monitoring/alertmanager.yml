@@ -1,0 +1,9 @@
+route:
+  receiver: local-lab
+  group_by: [alertname]
+  group_wait: 5s
+  group_interval: 30s
+  repeat_interval: 1h
+receivers:
+  - name: local-lab
+# Local UI only. No email, chat or webhook destination has been configured.

@@ -1,0 +1,28 @@
+{
+  "state": "passed",
+  "scope": "Windows Python + SQLite local deployment. No Docker or eNSP runtime validation.",
+  "fault_method": "Temporarily rename the synthetic assets table, then restore its original name.",
+  "stages": [
+    {
+      "label": "正常基线",
+      "utc": "2026-09-08T15:08:21.104800+00:00",
+      "healthz": 200,
+      "readyz": 200,
+      "db_up": 1
+    },
+    {
+      "label": "数据库查询故障",
+      "utc": "2026-09-08T15:08:21.134495+00:00",
+      "healthz": 200,
+      "readyz": 503,
+      "db_up": 0
+    },
+    {
+      "label": "恢复验证",
+      "utc": "2026-09-08T15:08:21.632209+00:00",
+      "healthz": 200,
+      "readyz": 200,
+      "db_up": 1
+    }
+  ]
+}

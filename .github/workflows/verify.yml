@@ -1,0 +1,57 @@
+name: verify-lab
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  local-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/verify.py
+  compose-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: cloud
+    steps:
+      - uses: actions/checkout@v4
+      - run: python scripts/init_env.py
+      - run: docker compose config --quiet
+      - run: docker compose up -d --build --wait --wait-timeout 240
+      - run: docker compose exec -T nginx nginx -t
+      - run: docker compose exec -T prometheus promtool check config /etc/prometheus/prometheus.yml
+      - run: docker compose exec -T prometheus promtool check rules /etc/prometheus/alerts.yml
+      - run: python scripts/acceptance.py
+      - run: python scripts/backup.py
+      - run: python scripts/restore_check.py "$(find backups -maxdepth 1 -name '*.sql' -print -quit)"
+      - if: always()
+        run: docker compose down
+  frontend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm install --global pnpm@11.19.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+      - run: pnpm build
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-test-results
+          path: frontend/test-results

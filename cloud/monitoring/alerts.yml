@@ -1,0 +1,38 @@
+groups:
+  - name: lab
+    rules:
+      - alert: AppInstanceDown
+        expr: up{job="app"} == 0
+        for: 15s
+        labels: {severity: warning}
+        annotations: {summary: 'An application metrics target cannot be scraped'}
+      - alert: DatabaseUnavailable
+        expr: lab_db_up{job="app"} == 0
+        for: 15s
+        labels: {severity: critical}
+        annotations: {summary: 'An application database query failed'}
+      - alert: BusinessProbeFailed
+        expr: probe_success{job="blackbox"} == 0
+        for: 15s
+        labels: {severity: critical}
+        annotations: {summary: 'The proxy readiness endpoint is failing'}
+      - alert: ProbeExporterDown
+        expr: up{job="blackbox"} == 0
+        for: 15s
+        labels: {severity: warning}
+        annotations: {summary: 'Business probe monitoring is unavailable'}
+      - alert: HostCPUHigh
+        expr: 1 - avg by(instance) (rate(node_cpu_seconds_total{mode="idle",job="node"}[2m])) > 0.85
+        for: 2m
+        labels: {severity: warning}
+        annotations: {summary: 'Linux VM CPU exceeds 85 percent'}
+      - alert: HostMemoryLow
+        expr: node_memory_MemAvailable_bytes{job="node"} / node_memory_MemTotal_bytes{job="node"} < 0.10
+        for: 2m
+        labels: {severity: warning}
+        annotations: {summary: 'Linux VM available memory below 10 percent'}
+      - alert: HostDiskLow
+        expr: node_filesystem_avail_bytes{job="node",fstype!~"tmpfs|overlay|squashfs"} / node_filesystem_size_bytes{job="node",fstype!~"tmpfs|overlay|squashfs"} < 0.15
+        for: 2m
+        labels: {severity: warning}
+        annotations: {summary: 'Linux VM filesystem available space below 15 percent'}

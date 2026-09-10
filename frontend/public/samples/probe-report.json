@@ -1,0 +1,98 @@
+{
+  "generated_at_utc": "2026-09-08T15:07:51.647432+00:00",
+  "mode": "live_explicit_inventory",
+  "method": "HTTP status / TCP handshake",
+  "note": "真实本机HTTP/TCP请求；服务和故障为测试脚本创建的模拟对象，非eNSP设备或生产业务。请求失败比例不是ICMP丢包率。临时端口在脚本结束后关闭。",
+  "results": [
+    {
+      "name": "local-healthy",
+      "kind": "http",
+      "target": "http://127.0.0.1:54926/healthy",
+      "expected_status": 200,
+      "attempts": 3,
+      "successes": 3,
+      "request_failure_ratio": 0.0,
+      "state": "OK",
+      "samples": [
+        {
+          "ok": true,
+          "reason": "ok",
+          "http_status": 200,
+          "latency_ms": 65.599
+        },
+        {
+          "ok": true,
+          "reason": "ok",
+          "http_status": 200,
+          "latency_ms": 28.117
+        },
+        {
+          "ok": true,
+          "reason": "ok",
+          "http_status": 200,
+          "latency_ms": 47.498
+        }
+      ]
+    },
+    {
+      "name": "local-dependency-down",
+      "kind": "http",
+      "target": "http://127.0.0.1:54926/dependency-down",
+      "expected_status": 200,
+      "attempts": 3,
+      "successes": 0,
+      "request_failure_ratio": 1.0,
+      "state": "FAILED",
+      "samples": [
+        {
+          "ok": false,
+          "reason": "unexpected_http_status",
+          "http_status": 503,
+          "latency_ms": 25.432
+        },
+        {
+          "ok": false,
+          "reason": "unexpected_http_status",
+          "http_status": 503,
+          "latency_ms": 43.57
+        },
+        {
+          "ok": false,
+          "reason": "unexpected_http_status",
+          "http_status": 503,
+          "latency_ms": 47.942
+        }
+      ]
+    },
+    {
+      "name": "local-tcp-listener",
+      "kind": "tcp",
+      "target": "127.0.0.1:54926",
+      "expected_status": 200,
+      "attempts": 3,
+      "successes": 3,
+      "request_failure_ratio": 0.0,
+      "state": "OK",
+      "samples": [
+        {
+          "ok": true,
+          "reason": "ok",
+          "http_status": null,
+          "latency_ms": 4.987
+        },
+        {
+          "ok": true,
+          "reason": "ok",
+          "http_status": null,
+          "latency_ms": 0.435
+        },
+        {
+          "ok": true,
+          "reason": "ok",
+          "http_status": null,
+          "latency_ms": 4.362
+        }
+      ]
+    }
+  ]
+}

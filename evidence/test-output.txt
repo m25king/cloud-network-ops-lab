@@ -1,0 +1,30 @@
+test_asset_failure_is_explicit_and_read_only (test_lab.AppTests.test_asset_failure_is_explicit_and_read_only) ... ok
+test_asset_filters_and_pagination (test_lab.AppTests.test_asset_filters_and_pagination) ... ok
+test_asset_input_does_not_expand_query (test_lab.AppTests.test_asset_input_does_not_expand_query) ... ok
+test_counters_safe_under_threads (test_lab.AppTests.test_counters_safe_under_threads) ... ok
+test_dashboard_and_default_drill_report (test_lab.AppTests.test_dashboard_and_default_drill_report) ... ok
+test_dependency_failure_does_not_hide_process_or_metrics (test_lab.AppTests.test_dependency_failure_does_not_hide_process_or_metrics) ... ok
+test_local_server_handles_idle_browser_connection (test_lab.AppTests.test_local_server_handles_idle_browser_connection) ... ok
+test_metric_labels_are_bounded (test_lab.AppTests.test_metric_labels_are_bounded) ... ok
+test_no_mutation_endpoint (test_lab.AppTests.test_no_mutation_endpoint) ... ok
+test_real_sqlite_seed_is_idempotent (test_lab.AppTests.test_real_sqlite_seed_is_idempotent) ... ok
+test_second_local_listener_cannot_claim_same_port (test_lab.AppTests.test_second_local_listener_cannot_claim_same_port) ... ok
+test_artifacts_state_validation_limits (test_lab.NetworkDesignTests.test_artifacts_state_validation_limits) ... ok
+test_both_cores_advertise_and_filter_business_networks (test_lab.NetworkDesignTests.test_both_cores_advertise_and_filter_business_networks) ... ok
+test_transit_addresses_valid_unique_nonoverlapping (test_lab.NetworkDesignTests.test_transit_addresses_valid_unique_nonoverlapping) ... ok
+test_expected_error_status_can_pass (test_lab.ProbeTests.test_expected_error_status_can_pass) ... ok
+test_http_and_tcp_reachability (test_lab.ProbeTests.test_http_and_tcp_reachability) ... ok
+test_http_failure_is_not_tcp_failure (test_lab.ProbeTests.test_http_failure_is_not_tcp_failure) ... ok
+test_invalid_target_and_limits_rejected (test_lab.ProbeTests.test_invalid_target_and_limits_rejected) ... ok
+test_inventory_duplicates_rejected (test_lab.ProbeTests.test_inventory_duplicates_rejected) ... ok
+test_real_cli_process_and_output (test_lab.ProbeTests.test_real_cli_process_and_output) ... ok
+test_redirect_not_followed (test_lab.ProbeTests.test_redirect_not_followed) ... ok
+test_reports_escape_untrusted_input (test_lab.ProbeTests.test_reports_escape_untrusted_input) ... ok
+test_expected_down_and_unused_down_distinguished (test_lab.VRPTests.test_expected_down_and_unused_down_distinguished) ... ok
+test_secrets_redacted (test_lab.VRPTests.test_secrets_redacted) ... ok
+test_unknown_and_missing_never_green (test_lab.VRPTests.test_unknown_and_missing_never_green) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 2.590s
+
+OK

@@ -1,0 +1,4 @@
+[
+  {"name":"CORE1","host":"192.168.99.252","expected_up":["Vlanif10","Vlanif99","Vlanif101","Vlanif102"]},
+  {"name":"CORE2","host":"192.168.99.253","expected_up":["Vlanif10","Vlanif99","Vlanif101","Vlanif102"]}
+]

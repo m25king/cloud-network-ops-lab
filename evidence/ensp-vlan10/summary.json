@@ -1,0 +1,39 @@
+{
+  "state": "minimal_vlan_connectivity_verified",
+  "tested_date": "2026-09-08",
+  "devices": [
+    "S5700 V200R001C00 / VRP 5.110",
+    "S3700 V200R001C00 / VRP 5.110"
+  ],
+  "pings": [
+    {
+      "utc": "2026-09-08T15:20:56.541480+00:00",
+      "console_port": 2100,
+      "command": "ping -c 3 192.168.10.11",
+      "sent": 3,
+      "received": 3
+    },
+    {
+      "utc": "2026-09-08T15:20:57.748671+00:00",
+      "console_port": 2100,
+      "command": "ping -c 3 192.168.10.12",
+      "sent": 3,
+      "received": 3
+    },
+    {
+      "utc": "2026-09-08T15:20:59.996033+00:00",
+      "console_port": 2101,
+      "command": "ping -c 3 192.168.10.252",
+      "sent": 3,
+      "received": 3
+    }
+  ],
+  "scope": "Switch-originated ICMP to both simulated PCs and across the switch trunk.",
+  "not_verified": [
+    "PC-originated bidirectional ping",
+    "VLAN fault/recovery drill",
+    "Device configuration save and reboot persistence",
+    "Full 10-device topology and failover"
+  ],
+  "current_runtime": "Console ports 2100 and 2101 were unavailable when resuming on 2026-09-09."
+}

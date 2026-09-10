@@ -1,0 +1,3 @@
+name,kind,target,expected_status
+local-readiness,http,http://127.0.0.1:8081/readyz,200
+local-listener,tcp,127.0.0.1:8081,200
