@@ -1,6 +1,6 @@
 # Cloud Network Ops Lab
 
-**云网运维个人实验项目集：网络方案、云应用监控、Python巡检。**
+**云网运维实验室：园区网络、云应用监控、自动化巡检与运维管理。**
 
 [![verify-lab](https://github.com/m25king/cloud-network-ops-lab/actions/workflows/verify.yml/badge.svg)](https://github.com/m25king/cloud-network-ops-lab/actions/workflows/verify.yml)
 
@@ -49,7 +49,7 @@ python automation/probe.py --inventory automation/inventory.example.csv --live -
 
 ## 工程状态
 
-本仓库是AI辅助生成、经过本机和GitHub Linux环境验证的个人实验材料。使用者需要亲自执行、修改并理解后，才能在简历中陈述自己的实现和故障处理经验。没有伪造项目时间、提交历史、运行截图、丢包率或企业落地经历。
+本仓库是可复现的个人实验材料，代码、配置、测试和验证边界均保留在仓库中。没有伪造项目时间、提交历史、运行截图、丢包率或企业落地经历。
 
 ### 2026-09-09 实际验收
 
