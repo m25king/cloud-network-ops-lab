@@ -33,6 +33,12 @@ python automation/probe.py --inventory automation/inventory.example.csv --live -
 
 [eNSP最小VLAN实测](evidence/ensp-vlan10/README.md)保留实际型号、命令与探测结果：CORE1到两台PC、ACC1到CORE1的3组ICMP检查均收到全部3个响应。测试范围及尚未完成的验收项目均在记录中标明。
 
+## 前端管理台与最新验证
+
+[前端启动与部署](frontend/README.md) · [项目缺口清单](docs/project-gaps.md)
+
+修复了部分成功报告导入、CSV测试语法及重复告警语义。25项Python测试、11项前端单元测试通过；2026-09-11完成4项浏览器测试、类型检查与生产构建。历史Compose验收不能替代当前版本容器复测。
+
 ## 阅读导航
 
 - [架构与关键取舍](docs/architecture.md)：哪些故障受保护，哪些仍会中断。

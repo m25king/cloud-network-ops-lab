@@ -25,6 +25,6 @@ test_secrets_redacted (test_lab.VRPTests.test_secrets_redacted) ... ok
 test_unknown_and_missing_never_green (test_lab.VRPTests.test_unknown_and_missing_never_green) ... ok
 
 ----------------------------------------------------------------------
-Ran 25 tests in 2.590s
+Ran 25 tests in 1.855s
 
 OK

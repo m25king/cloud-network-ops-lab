@@ -1,7 +1,7 @@
 import { Alert, Button, Skeleton, Tag } from 'antd';
 import { ReloadOutlined } from '@ant-design/icons';
 export function ErrorNotice({ error, retry }: { error: Error; retry: () => void }) {
-  return <div role="alert"><Alert type="error" showIcon title="数据读取失败" description={error.message} action={<Button size="small" onClick={retry}>重试</Button>} /></div>;
+  return <div><Alert type="error" showIcon title="数据读取失败" description={error.message} action={<Button size="small" aria-label="重试" onClick={retry}>重试</Button>} /></div>;
 }
 export function Loading() { return <div role="status" aria-label="正在加载数据"><Skeleton active paragraph={{ rows: 5 }} /></div>; }
 export function Refresh({ onClick, busy }: { onClick: () => void; busy: boolean }) { return <Button icon={<ReloadOutlined />} loading={busy} onClick={onClick}>刷新数据</Button>; }

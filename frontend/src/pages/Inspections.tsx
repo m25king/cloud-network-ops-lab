@@ -27,7 +27,7 @@ export default function Inspections() {
   const rows = report?.results.filter(row => filter === '全部' || (filter === '仅异常' && row.state !== 'OK')) || [];
   return <><PageTitle title="巡检报告" subtitle="回看逐次 HTTP / TCP 探测，定位失败原因。这里展示历史采样，不代表当前在线状态。" action={<Button icon={<UploadOutlined />} onClick={() => input.current?.click()}>导入报告</Button>} />
     <input ref={input} className="visually-hidden" type="file" accept=".json,application/json" aria-label="选择巡检 JSON 文件" onChange={e => { void importFile(e.target.files?.[0]); e.target.value = ''; }} />
-    {error && <div role="alert"><Alert type="error" showIcon title={error} /></div>}
+    {error && <Alert type="error" showIcon title={error} />}
     {query.isError && !imported && <ErrorNotice error={query.error} retry={() => void query.refetch()} />}
     {!report && query.isPending ? <Loading /> : report && <><div className="report-meta"><Tag color="gold">历史报告</Tag><span>来源：{filename}</span><span>采样时间：{new Date(report.generated_at_utc).toLocaleString('zh-CN')}</span>{imported && <Button size="small" onClick={() => { setImported(null); setFilename('仓库内的历史实验报告'); }}>恢复示例</Button>}</div>
     <div className="report-stats"><Card><span>探测目标</span><b>{report.results.length}</b></Card><Card><span>全部采样成功</span><b className="success">{report.results.filter(v => v.state === 'OK').length}</b></Card><Card><span>含失败采样</span><b className="danger">{report.results.filter(v => v.state !== 'OK').length}</b></Card></div>

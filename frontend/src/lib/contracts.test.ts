@@ -17,7 +17,19 @@ describe('API boundary', () => {
   it('does not retry client errors and bounds server retries', () => { expect(retryRequest(0,new ApiError('bad',400))).toBe(false); expect(retryRequest(0,new ApiError('down',503))).toBe(true); expect(retryRequest(1,new ApiError('down',503))).toBe(false); });
 });
 describe('CSV export', () => {
-  it('neutralizes formula injection', () => expect(csvCell('  =SUM(A1)')).toBe("'  =SUM(A1)));
+  it('neutralizes formula injection', () => expect(csvCell('  =SUM(A1)')).toBe('"\'  =SUM(A1)"'));
   it('escapes embedded quotes and preserves Chinese', () => expect(toCsv([['名称','a"b']])).toBe('\uFEFF"名称","a""b"'));
 });
 
+
+it('accepts partial failures produced by the Python probe', () => {
+  const r = structuredClone(report);
+  const probe = r.results[0];
+  probe.samples[0].ok = false;
+  probe.successes = 2;
+  probe.request_failure_ratio = 1 / 3;
+  probe.state = 'DEGRADED';
+  expect(reportSchema.safeParse(r).success).toBe(true);
+  probe.state = 'FAILED';
+  expect(reportSchema.safeParse(r).success).toBe(false);
+});
