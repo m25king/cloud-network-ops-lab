@@ -53,3 +53,4 @@ docker compose -f compose.yaml -f compose.frontend.yaml up -d --build --wait
 ## 当前范围
 
 系统只读，不包含登录、RBAC、资产增删改、工单流转或后台报告归档。当前适合本机实验；对外服务前需明确认证与访问控制需求。故障记录是历史证据，登记资产不是实时在线设备清单。
+

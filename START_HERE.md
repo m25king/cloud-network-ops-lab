@@ -143,3 +143,4 @@ return
 本课通过后，按network/README.md的接线表扩展正式拓扑。依次完成多VLAN与三层网关、DHCP、OSPF/默认路由/NAT、MSTP/VRRP、访客ACL，再逐份执行network/faults中的故障演练。每次增加一项功能，就增加对应的正向和失败测试。
 
 GitHub的作用是让别人看到你的代码、配置和证据。先完成这一课，把截图和结果发回当前对话核对，再继续增加功能。
+

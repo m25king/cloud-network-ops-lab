@@ -4,7 +4,7 @@
 
 [![verify-lab](https://github.com/m25king/cloud-network-ops-lab/actions/workflows/verify.yml/badge.svg)](https://github.com/m25king/cloud-network-ops-lab/actions/workflows/verify.yml)
 
-面向云网运维、信息通信与系统运行维护方向。可用于学习、复现实验和讲解设计取舍。非中国电信或南方电网生产项目，无内部资料、真实资产清单或商业数据。
+这是一个用于学习、复现实验和验证设计取舍的云网运维项目。项目使用合成数据，不包含任何真实生产资产或业务数据。
 
 ## 从这里开始
 
@@ -67,3 +67,4 @@ python automation/probe.py --inventory automation/inventory.example.csv --live -
 这是临时CI环境的实际部署验收，运行结束会清理容器；GitHub仓库不是持续在线的业务服务。本机持续演示使用Python/SQLite。没有验证完整10设备园区切换、真实设备SSH、宿主机资源告警或外部通知送达，也没有性能压测、全年可用率或面试通过结论。早期`evidence/verification.json`保留当时本机验证边界，后续进展以上述记录为准。
 
 未实跑功能不会放“已完成”徽章。个人联系方式、成绩、求职简历和备份文件不属于此公开项目仓库。
+

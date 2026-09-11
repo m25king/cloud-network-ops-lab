@@ -42,3 +42,4 @@ python automation/collect_ssh.py --inventory automation/ssh-inventory.example.js
 5. 执行测试套件，覆盖HTML注入转义、未知VRP格式、缺少接口和配置秘密屏蔽。
 
 规则分类和固定阈值属于自动化运维，未使用训练模型、LLM根因诊断或自动修复。后续智能化扩展需要标注数据、基线比较、误报统计和人工处置入口，不能把脚本包装成AI模型项目。
+
